@@ -3,11 +3,11 @@
     <name>ScratchPad</name>
     <description>Additional editor tool window to hold pieces of code temporarily. No syntax colouring, intentions or error highlighting.
     </description>
-    <version>0.14</version>
+    <version>0.15</version>
     <vendor logo="/org/intellij/scratchpad/resources/scratchPad.png"
             email="cmsherratt@hotmail.com">Chris Sherratt
     </vendor>
-    <idea-version since-build="4192"/>
+    <idea-version since-build="123.00"/>
     <change-notes>
         <![CDATA[
             <html>
@@ -30,7 +30,7 @@
     <actions>
         <action class="org.intellij.scratchpad.actions.AddTab" text="Add" description="Add New Tab"
                 id="ScratchPadAddTab"
-                icon="/actions/include.png"/>
+                icon="/general/add.png"/>
         <action class="org.intellij.scratchpad.actions.RemoveTab" text="Remove" description="Remove this Tab"
                 id="ScratchPadRemoveTab"
                 icon="/actions/exclude.png"/>
