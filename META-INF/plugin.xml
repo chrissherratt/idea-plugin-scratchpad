@@ -1,0 +1,74 @@
+<!DOCTYPE idea-plugin PUBLIC "Plugin/DTD" "http://plugins.intellij.net/plugin.dtd">
+<idea-plugin url="https://github.com/chrissherratt/idea-plugin-scratchpad">
+    <name>ScratchPad</name>
+    <description>Additional editor tool window to hold pieces of code temporarily. No syntax colouring, intentions or error highlighting.
+    </description>
+    <version>0.14</version>
+    <vendor logo="/org/intellij/scratchpad/resources/scratchPad.png"
+            email="cmsherratt@hotmail.com">Chris Sherratt
+    </vendor>
+    <idea-version since-build="4192"/>
+    <change-notes>
+        <![CDATA[
+            <html>
+                <ul>
+                    <li>Function to sort contents.
+                    <li>Store scratch pad contents correctly in iws file.
+                </ul>
+            </html>
+        ]]>
+    </change-notes>
+
+    <project-components>
+        <component>
+            <implementation-class>org.intellij.scratchpad.ScratchPadProjectComponent</implementation-class>
+            <!-- Save state to the .iws instead of .ipr -->
+            <option name="workspace" value="true"/>
+        </component>
+    </project-components>
+
+    <actions>
+        <action class="org.intellij.scratchpad.actions.AddTab" text="Add" description="Add New Tab"
+                id="ScratchPadAddTab"
+                icon="/actions/include.png"/>
+        <action class="org.intellij.scratchpad.actions.RemoveTab" text="Remove" description="Remove this Tab"
+                id="ScratchPadRemoveTab"
+                icon="/actions/exclude.png"/>
+        <action class="org.intellij.scratchpad.actions.CloseTab" text="Close" description="Close this Tab"
+                id="ScratchPadCloseTab"
+                icon="/actions/cancel.png"/>
+        <action class="org.intellij.scratchpad.actions.RenameTab" text="Rename" description="Rename this Tab"
+                id="ScratchPadRenameTab"/>
+        <action class="org.intellij.scratchpad.actions.ClearTab" text="Clear" description="Clear Tab Contents"
+                id="ScratchPadClearTab"
+                icon="/org/intellij/scratchpad/resources/clear.png"/>
+        <action class="org.intellij.scratchpad.actions.LoadTab" text="Load" description="Load File into Tab"
+                id="ScratchPadLoadTab"
+                icon="/actions/menu-open.png"/>
+        <action class="org.intellij.scratchpad.actions.SaveTab" text="Save" description="Save Tab Contents"
+                id="ScratchPadSaveTab"
+                icon="/actions/menu-saveall.png"/>
+        <action class="org.intellij.scratchpad.actions.SortTab" text="Sort" description="Sort Tab Contents"
+                id="ScratchPadSortTab"
+                icon="/actions/sortAsc.png"/>
+        <group id="ScratchPadToolbarGroup">
+            <reference ref="ScratchPadAddTab"/>
+            <reference ref="ScratchPadRemoveTab"/>
+            <separator/>
+            <reference ref="ScratchPadLoadTab"/>
+            <reference ref="ScratchPadSaveTab"/>
+            <separator/>
+            <reference ref="ScratchPadClearTab"/>
+            <reference ref="ScratchPadSortTab"/>
+        </group>
+        <group id="ScratchPadContextPopup">
+            <reference ref="ScratchPadCloseTab"/>
+            <reference ref="ScratchPadRenameTab"/>
+            <reference ref="ScratchPadClearTab"/>
+            <reference ref="ScratchPadSortTab"/>
+            <separator/>
+            <reference ref="ScratchPadAddTab"/>
+        </group>
+    </actions>
+
+</idea-plugin>
